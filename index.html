@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Resource-reflector by Latency</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Resource-reflector</h1>
+        <p>.NET Resource Reflector</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/Latency/Resource-Reflector" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/Latency/Resource-Reflector/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/Latency/Resource-Reflector/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="resource-reflector" class="anchor" href="#resource-reflector"><span class="octicon octicon-link"></span></a>Resource-Reflector</h1>
+
+<p>A .NET application written in C# for viewing and extracting assembly resources.</p>
+
+<h2>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>This article examines a simple utility application which allows you to view, save, and copy images, icons, and cursors embedded in an assembly. The utility was compiled against v2.0 or v4.5.x of the .NET framework, but the core functionality could easily be ported to v1.x, if necessary.</p>
+
+<h2>
+<a name="background" class="anchor" href="#background"><span class="octicon octicon-link"></span></a>Background</h2>
+
+<p>When an assembly is created, it is possible to store arbitrary files within it, such as BMPs, XML files, etc. Those files are called embedded resources. Embedding a resource within an assembly has several benefits, such as:</p>
+
+<p>Simplifying deployment (less files to manage).
+Simplifying resource consumption (there is no chance that the file will be missing at runtime).
+You can easily embed an image into an assembly using Visual Studio .NET, by following these steps:</p>
+
+<p>Add an image file to a project.
+In Solution Explorer, right click on the image file and select Properties from the context menu.
+In the Properties window, select Embedded Resource for the Build Action property.
+Compile the project into an assembly.
+As you might imagine, the .NET framework provides support for programmatic retrieval of embedded resources. We will be examining how that is implemented, later in the article.</p>
+
+<h2>
+<a name="using-the-utility" class="anchor" href="#using-the-utility"><span class="octicon octicon-link"></span></a>Using the utility</h2>
+
+<p>There are four essential steps to using this tool:</p>
+
+<ol>
+<li>Run the .exe.</li>
+<li>Click the Open button to locate the assembly which contains the image(s) you want to extract.</li>
+<li>Navigate to the image(s) you are interested in, via the BindingNavigator at the top of the window.</li>
+<li>Click either the Save or Copy button to persist an image to the disk or clipboard.</li>
+</ol><ul>
+<li>Tip - Steps 1 and 2 can be consolidated by simply drag-dropping the target assembly onto Embedded Image Grabber.exe.</li>
+</ul><h2>
+<a name="other-features" class="anchor" href="#other-features"><span class="octicon octicon-link"></span></a>Other features</h2>
+
+<ul>
+<li>Save Options</li> When saving an embedded icon or cursor, you have the option of saving it either as the original type of file or as a bitmap. The Save As dialog will default to using the extension which corresponds to the original type of the embedded resource.
+<li>Open via Drag-Drop</li> In addition to being able to open the application with an assembly loaded by drag-dropping the assembly onto Embedded Image Grabber.exe, you can also load an assembly while the app is running, via drag-drop. Simply drop an assembly onto the form, and the embedded images it contains will be loaded.
+<li>'All Images' tab</li> Provides a grid view of every image in the assembly. It makes searching for an image faster.
+<li>Properties View</li> A PropertyGrid which displays detailed information about the current image. Click the rightmost button on the toolbar to show/hide this view.
+<li>Context Menu</li> Provides quick access to save, copy, or show/hide properties of an image.
+<li>View Options</li> When the 'Individual Image' tab is selected, the toolbar will have a combobox which allows you to alter the way that the current image is rendered (such as zoomed, centered, etc.).
+</ul>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/Latency">Latency</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-53012313-3");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
